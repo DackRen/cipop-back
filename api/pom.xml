@@ -51,6 +51,11 @@
         </dependency>
         <!-- Spring Boot End-->
 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
         <!-- JUNIT 5 Start-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
