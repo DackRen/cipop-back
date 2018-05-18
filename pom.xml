@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.cipop</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>project</artifactId>
     <version>0.0.1</version>
     <packaging>pom</packaging>
 
@@ -64,6 +64,7 @@
     </dependencies>
 
     <build>
+        <finalName>cipop</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -75,6 +76,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <modules>
+        <module>api</module>
+        <!--<module>microcloud-provider-dept-8001</module>-->
+    </modules>
 
 
 </project>
