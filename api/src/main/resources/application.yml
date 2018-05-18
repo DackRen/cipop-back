@@ -9,9 +9,8 @@ logging:
     org.apache.cxf: WARN
     org.apache.commons.jexl2.JexlEngine: ERROR
 
-
 info:
   name: ${spring.application.name}
   description: Cipop API
-#  environment: ${spring.profiles.active}
+  environment: ${spring.profiles.active}
   version: 1.0.0

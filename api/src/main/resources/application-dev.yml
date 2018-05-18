@@ -2,7 +2,6 @@ spring:
   profiles:
     include: swagger
 
-
 # h2
   datasource.data: classpath:/sql/init-data.sql
   jpa:
