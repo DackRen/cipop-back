@@ -1,4 +1,4 @@
-package com.cipop.demo;
+package com.cipop.api;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
