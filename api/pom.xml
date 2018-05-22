@@ -19,8 +19,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
+        <!--<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>-->
+        <!--<java.version>1.8</java.version>-->
     </properties>
 
     <dependencies>
@@ -28,6 +28,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.braintreepayments.gateway</groupId>
+            <artifactId>braintree-java</artifactId>
         </dependency>
 
         <!--<dependency>-->
@@ -43,18 +48,26 @@
             <!--<artifactId>spring-boot-devtools</artifactId>-->
             <!--<scope>runtime</scope>-->
         <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-test</artifactId>-->
-            <!--<scope>test</scope>-->
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>junit</groupId>-->
-                    <!--<artifactId>junit</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; Spring Boot End&ndash;&gt;-->
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.0.2.RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Spring Boot End-->
 
         <!--<dependency>-->
             <!--<groupId>com.h2database</groupId>-->
