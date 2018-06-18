@@ -87,10 +87,11 @@
             </dependency>
 
             <!-- Spring Boot Start-->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
-            </dependency>
+            <!--注意：WEB 模块实际上不可以卸载父类里面让子模块继承，这样是实现不了的-->
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-starter-web</artifactId>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-aop</artifactId>
@@ -170,10 +171,15 @@
             <!-- Swagger2 End -->
 
             <!-- SQL Start-->
-            <dependency>
-                <groupId>com.h2database</groupId>
-                <artifactId>h2</artifactId>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>com.h2database</groupId>-->
+                <!--<artifactId>h2</artifactId>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.postgresql</groupId>-->
+                <!--<artifactId>postgresql</artifactId>-->
+                <!--<version>9.4.1212</version>-->
+            <!--</dependency>-->
             <!-- SQL End-->
 
             <!-- Lombok Start -->
@@ -192,7 +198,6 @@
                 <version>2.73.0</version>
             </dependency>
             <!-- Paypal end -->
-
 
         </dependencies>
     </dependencyManagement>
@@ -236,6 +241,7 @@
     <modules>
         <module>api</module>
         <module>bean</module>
+        <module>cipop-consumer-80</module>
     </modules>
 
 </project>

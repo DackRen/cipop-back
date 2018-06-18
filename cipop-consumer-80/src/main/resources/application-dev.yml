@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    include: swagger
+
+  h2.console.enabled: true
+#  mongodb:
+#    embedded.storage:
+#      database-dir: target/mongodb
+#  data:
+#    mongodb:
+#      uri: mongodb://localhost:27017/ftl-oms-test
+
+  # h2
+  datasource.data: classpath:/sql/init-data.sql
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    database: H2
+    show-sql: true
+    properties.hibernate.format_sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+  # psql
+  #  datasource:
+  #    driver-class-name: org.postgresql.Driver
+  #    url: jdbc:postgresql://localhost:5432/ftl-test
+  #    username: root
+  #    password: root
+  #    data: classpath:/sql/init-data.sql
+  #  jpa:
+  #    show-sql: true
+  #    hibernate:
+  #      ddl-auto: create-drop
+  #    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #    database: POSTGRESQL
