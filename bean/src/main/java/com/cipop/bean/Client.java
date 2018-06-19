@@ -3,6 +3,7 @@ package com.cipop.bean;
 import com.cipop.bean.abs.base.AbstractAuditing;
 import com.cipop.bean.enums.ClientType;
 import com.cipop.bean.enums.PricingType;
+import com.cipop.bean.enums.SexeType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -53,10 +54,13 @@ public class Client extends AbstractAuditing {
     @ApiModelProperty(value = "接收广告", readOnly = true)
     private Boolean advertisement = true;
     @ApiModelProperty(value = "是否已经激活", readOnly = true)
-    private Boolean activity = false;
+    private Boolean activate = false;
     @ApiModelProperty(value = "头像", readOnly = true)
     private String image;
     @Enumerated(EnumType.STRING)
     @ApiModelProperty(value = "客户类型", readOnly = true)
     private ClientType clientType = ClientType.TENANT;
+    @Enumerated(EnumType.STRING)
+    @ApiModelProperty(value = "Sexe", readOnly = true)
+    private SexeType sexe = SexeType.SECRET;
 }

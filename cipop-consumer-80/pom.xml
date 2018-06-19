@@ -23,7 +23,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.cipop</groupId>
+            <groupId>com.cipop.bean</groupId>
             <artifactId>bean</artifactId>
             <version>0.0.1</version>
         </dependency>

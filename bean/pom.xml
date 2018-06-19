@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cipop</groupId>
+    <groupId>com.cipop.bean</groupId>
     <artifactId>bean</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
@@ -84,14 +84,14 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.boot.maven.plugin.version}</version>
-                <configuration>
-                    <fork>true</fork>
-                </configuration>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<version>${spring.boot.maven.plugin.version}</version>-->
+                <!--<configuration>-->
+                    <!--<fork>true</fork>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
 
             <!--Junit 5-->
             <plugin>
@@ -104,6 +104,21 @@
                         <version>${junit.platform.surefire.provider.version}</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <!-- 外部模块被 其它模块引用 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>exec</classifier>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>

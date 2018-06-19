@@ -8,11 +8,11 @@ package com.cipop.bean.enums;
  **/
 public enum ClientType {
     /**
-     * Tenant
+     * Tenant 房客
      */
     TENANT,
     /**
-     * landlord
+     * Landlord 房东
      */
     LANDLORD
 }
