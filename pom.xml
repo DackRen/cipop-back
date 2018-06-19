@@ -239,7 +239,7 @@
     </build>
 
     <modules>
-        <module>api</module>
+        <module>base</module>
         <module>bean</module>
         <module>cipop-consumer-80</module>
         <module>cipop-provider-client-8001</module>

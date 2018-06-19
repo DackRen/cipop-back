@@ -1,4 +1,4 @@
-Cipop-back: Commons作为公共的信息导入配置模块
+Cipop-back: 公共模块
 ==
 
 Development Requirements

@@ -24,11 +24,19 @@
 	</properties>
 
 	<dependencies>
+		<!-- Other Module -->
 		<dependency>
 			<groupId>com.cipop</groupId>
 			<artifactId>bean</artifactId>
 			<version>0.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.cipop.base</groupId>
+			<artifactId>base</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		<!-- Other Module -->
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
