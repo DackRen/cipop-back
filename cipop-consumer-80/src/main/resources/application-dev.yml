@@ -8,7 +8,7 @@ spring:
 #      database-dir: target/mongodb
 #  data:
 #    mongodb:
-#      uri: mongodb://localhost:27017/ftl-oms-test
+#      uri: mongodb://localhost:27017/ftl-oms-client
 
   # h2
   datasource.data: classpath:/sql/init-data.sql
@@ -23,7 +23,7 @@ spring:
   # psql
   #  datasource:
   #    driver-class-name: org.postgresql.Driver
-  #    url: jdbc:postgresql://localhost:5432/ftl-test
+  #    url: jdbc:postgresql://localhost:5432/ftl-client
   #    username: root
   #    password: root
   #    data: classpath:/sql/init-data.sql

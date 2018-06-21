@@ -39,6 +39,8 @@
         <swagger2markup.version>1.3.1</swagger2markup.version>
         <!-- Lombok -->
         <lombok.version>1.16.10</lombok.version>
+        <!-- Jackson -->
+        <jackson.version>2.9.6</jackson.version>
 
         <!-- Spring Boot Maven Plugin-->
         <spring.boot.maven.plugin.version>1.5.7.RELEASE</spring.boot.maven.plugin.version>
@@ -168,6 +170,32 @@
                 </exclusions>
             </dependency>
             <!-- Swagger2 End -->
+
+
+            <!--Jackson-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--Jackson-->
+
+            <dependency>
+                <groupId>io.github.swagger2markup</groupId>
+                <artifactId>swagger2markup</artifactId>
+                <version>1.3.1</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>guava</artifactId>
+                        <groupId>com.google.guava</groupId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.mail</groupId>
+                        <artifactId>mailapi</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
 
             <!-- SQL Start-->
             <!--<dependency>-->

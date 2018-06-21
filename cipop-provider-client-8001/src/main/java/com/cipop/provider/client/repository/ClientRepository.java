@@ -17,6 +17,10 @@ public class ClientRepository extends BaseJpaRepository<Client, String> {
         super(Client.class);
     }
 
+//    public Optional<Client> findByClient(String client) {
+//        return null;
+//    }
+
 //    public List<String> findAllIds() {
 //        return getEm().createQuery("SELECT c.id from Client c", String.class).getResultList();
 //    }
