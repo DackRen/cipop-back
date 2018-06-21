@@ -1,6 +1,11 @@
 package com.cipop.provider.client.service.impl;
 
+import com.cipop.base.exception.ErrorCode;
+import com.cipop.base.exception.InternalServerException;
+import com.cipop.bean.Client;
+import com.cipop.provider.client.repository.ClientRepository;
 import com.cipop.provider.client.service.IClientService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,6 +16,15 @@ import org.springframework.stereotype.Service;
  **/
 @Service
 public class ClientServiceImpl implements IClientService {
+    @Autowired
+    private ClientRepository clientRepository;
+
+    @Override
+    public Client get(String id) {
+        return clientRepository
+                .findById(id)
+                .orElseThrow(() -> new InternalServerException(ErrorCode.CLIENT_NOT_FOUND));
+    }
 //	public Dept get(long id) ;
 //	public boolean add(Dept dept) ;
 //	public List<Dept> list() ;
