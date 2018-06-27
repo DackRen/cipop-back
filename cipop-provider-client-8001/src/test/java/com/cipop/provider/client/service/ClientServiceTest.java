@@ -17,7 +17,9 @@ import javax.transaction.Transactional;
 @Sql("/sql/clients.sql")
 @Transactional
 public class ClientServiceTest {
-//    @Autowired
+    //    @Autowired
+//    @Resource(name = "clientServiceImpl")
+//    private IClientService clientServiceImpl;
     @Resource
     private ClientServiceImpl clientService;
 

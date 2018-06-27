@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class ClientServiceImpl implements IClientService {
     @Autowired
+//@Resource(name = "clientRepository")
+//    private IClientService clientServiceImpl;
     private ClientRepository clientRepository;
 
     @Override

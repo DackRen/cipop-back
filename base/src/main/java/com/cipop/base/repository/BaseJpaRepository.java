@@ -25,8 +25,8 @@ import javax.persistence.criteria.*;
 import java.util.*;
 
 @Transactional(
-    readOnly = true,
-    rollbackFor = Exception.class
+        readOnly = true,
+        rollbackFor = Exception.class
 )
 public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
     private Class<T> domainClass;
@@ -43,9 +43,9 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
 
     @Autowired
     public void setEm(EntityManager em) {
-            this.em = em;
-            this.provider = PersistenceProvider.fromEntityManager(em);
-            this.entityInformation = JpaEntityInformationSupport.getEntityInformation(domainClass, em);
+        this.em = em;
+        this.provider = PersistenceProvider.fromEntityManager(em);
+        this.entityInformation = JpaEntityInformationSupport.getEntityInformation(domainClass, em);
 
     }
 
@@ -93,7 +93,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
         Assert.notNull(entities, "The given Iterable of entities not be null!");
         Iterator var2 = entities.iterator();
 
-        while(var2.hasNext()) {
+        while (var2.hasNext()) {
             T entity = (T) var2.next();
             this.delete(entity);
         }
@@ -114,7 +114,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
     public void deleteAll() {
         Iterator var1 = this.findAll().iterator();
 
-        while(var1.hasNext()) {
+        while (var1.hasNext()) {
             T element = (T) var1.next();
             this.delete(element);
         }
@@ -162,8 +162,8 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
             } else {
                 Iterator var7 = idAttributeNames.iterator();
 
-                while(var7.hasNext()) {
-                    String idAttributeName = (String)var7.next();
+                while (var7.hasNext()) {
+                    String idAttributeName = (String) var7.next();
                     Object idAttributeValue = this.entityInformation.getCompositeIdAttributeValue(id, idAttributeName);
                     boolean complexIdParameterValueDiscovered = idAttributeValue != null && !query.getParameter(idAttributeName).getParameterType().isAssignableFrom(idAttributeValue.getClass());
                     if (complexIdParameterValueDiscovered) {
@@ -180,7 +180,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
 
     @Override
     public List<T> findAll() {
-        return this.getQuery((Specification)null, Sort.unsorted()).getResultList();
+        return this.getQuery((Specification) null, Sort.unsorted()).getResultList();
     }
 
     @Override
@@ -196,7 +196,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
             List<T> results = new ArrayList();
             Iterator var3 = ids.iterator();
 
-            while(var3.hasNext()) {
+            while (var3.hasNext()) {
                 ID id = (ID) var3.next();
                 this.findById(id).ifPresent(results::add);
             }
@@ -204,6 +204,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
             return results;
         }
     }
+
     @Override
     public List<T> findAll(Sort sort) {
         return this.getQuery(null, sort).getResultList();
@@ -215,7 +216,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
 
     @Override
     public Page<T> findAll(Pageable pageable) {
-        return (Page)(isUnpaged(pageable) ? new PageImpl(this.findAll()) : this.findAll((Specification)null, pageable));
+        return (Page) (isUnpaged(pageable) ? new PageImpl(this.findAll()) : this.findAll((Specification) null, pageable));
     }
 
     @Override
@@ -239,13 +240,13 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
     @Override
     public Page<T> findAll(@Nullable Specification<T> spec, Pageable pageable) {
         TypedQuery<T> query = this.getQuery(spec, pageable);
-        return (Page)(isUnpaged(pageable) ? new PageImpl(query.getResultList()) : this.readPage(query, this.getDomainClass(), pageable, spec));
+        return (Page) (isUnpaged(pageable) ? new PageImpl(query.getResultList()) : this.readPage(query, this.getDomainClass(), pageable, spec));
     }
 
 
     public Page<T> findAll(@Nullable Specification<T> spec, Pageable pageable, String fetchColumn) {
         TypedQuery<T> query = this.getQuery(spec, pageable, fetchColumn);
-        return (Page)(isUnpaged(pageable) ? new PageImpl(query.getResultList()) : this.readPage(query, this.getDomainClass(), pageable, spec));
+        return (Page) (isUnpaged(pageable) ? new PageImpl(query.getResultList()) : this.readPage(query, this.getDomainClass(), pageable, spec));
     }
 
     @Override
@@ -284,7 +285,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
         ExampleSpecification<S> spec = new ExampleSpecification<>(example);
         Class<S> probeType = example.getProbeType();
         TypedQuery<S> query = this.getQuery(new ExampleSpecification<>(example), probeType, pageable);
-        return (Page)(isUnpaged(pageable) ? new PageImpl<>(query.getResultList()) : this.readPage(query, probeType, pageable, spec));
+        return (Page) (isUnpaged(pageable) ? new PageImpl<>(query.getResultList()) : this.readPage(query, probeType, pageable, spec));
     }
 
     @Override
@@ -323,7 +324,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
         List<S> result = new ArrayList<>();
         Iterator var3 = entities.iterator();
 
-        while(var3.hasNext()) {
+        while (var3.hasNext()) {
             S entity = (S) var3.next();
             result.add(this.save(entity));
         }
@@ -339,7 +340,7 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
 
     protected <S extends T> Page<S> readPage(TypedQuery<S> query, Class<S> domainClass, Pageable pageable, @Nullable Specification<S> spec) {
         if (pageable.isPaged()) {
-            query.setFirstResult((int)pageable.getOffset());
+            query.setFirstResult((int) pageable.getOffset());
             query.setMaxResults(pageable.getPageSize());
         }
 
@@ -457,8 +458,8 @@ public abstract class BaseJpaRepository<T, ID> implements JpaRepository<T, ID>, 
         Long total = 0L;
 
         Long element;
-        for(Iterator var3 = totals.iterator(); var3.hasNext(); total = total + (element == null ? 0L : element)) {
-            element = (Long)var3.next();
+        for (Iterator var3 = totals.iterator(); var3.hasNext(); total = total + (element == null ? 0L : element)) {
+            element = (Long) var3.next();
         }
 
         return total;
