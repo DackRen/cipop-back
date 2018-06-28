@@ -30,7 +30,7 @@ public class TestConfig {
 //        return new TokenProvider();
 //    }
 
-    @Autowired(required = false)
+    @Autowired
     private EntityManager entityManager;
 
     @Bean
