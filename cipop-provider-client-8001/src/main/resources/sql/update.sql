@@ -1,0 +1,20 @@
+create table clients (
+  id                  VARCHAR(255)  not null ,
+  username            VARCHAR(255)  not null ,
+  password            VARCHAR(255)  not null ,
+  email               VARCHAR(5000) not null ,
+  phoneNumber         VARCHAR(255)  not null ,
+  language            VARCHAR(255) ,
+  pricingType         VARCHAR(255) ,
+  birthday            TIMESTAMP ,
+  advertisement       BOOLEAN ,
+  activate            BOOLEAN ,
+  image               BOOLEAN ,
+  clientType          VARCHAR(255) ,
+  sexe                VARCHAR(255) ,
+  createdAt           TIMESTAMP ,
+  updatedAt           TIMESTAMP ,
+  updatedBy           VARCHAR(255) ,
+  createdBy           VARCHAR(255),
+  primary key (id)
+)
